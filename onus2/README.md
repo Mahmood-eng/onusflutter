@@ -1,16 +1,15 @@
-# onus2
+هذا التكليف الثاني طورنا نظام التنقل عشان يكون "تفاعلي". الهدف هو إرسال بيانات من الشاشة الرئيسية إلى شاشة التفاصيل، والأهم من ذلك هو استقبال رد من شاشة التفاصيل عند العودة لإخبار المستخدم بنتيجة معينة.
+إيش الجديد في الكود؟
 
-A new Flutter project.
+إرسال البيانات (Forward Passing): استخدمت الـ Constructor في شاشة التفاصيل عشان تستقبل اسم المنتج وتعرضه. يعني لو ضغطت على "آيفون"، الشاشة الثانية بتعرف وتكتب "آيفون".
 
-## Getting Started
+إرجاع النتيجة (Backward Result): استخدمت ميزة الـ pop لإرسال نص مثل " تم إضافة المنتج الى المفضلات " عند العودة للشاشة السابقة.
 
-This project is a starting point for a Flutter application.
+تنبيه المستخدم (SnackBar): برمجت الشاشة الرئيسية بحيث "تنتظر" الرد، وأول ما ترجع، يظهر شريط تنبيه (SnackBar) في أسفل الشاشة يوضح العملية اللي تمت.
+🧠 كيف يشتغل النظام؟ (المنطق البرمجي)
+في الشاشة الرئيسية: استخدمت await مع الـ Navigator.push. هذا يخلي التطبيق ينتظر لين يرجع المستخدم من الشاشة الثانية.
 
-A few resources to get you started if this is your first Flutter project:
+في شاشة التفاصيل: عند الضغط على زر "إضافة للمفضلة"، نغلق الشاشة بـ Navigator.pop(context, 'Added to favorites').
+العودة: بمجرد العودة، يستلم التطبيق النص المرسل ويظهره فوراً في SnackBar.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+لقطات الشاشة :
