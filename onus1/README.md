@@ -1,16 +1,12 @@
-# onus1
+هذا التكليف الأول طبقت المفهوم الأساسي للتنقل في فلاتر اللي هو الـ Stack (المكدس). الفكرة كلها تدور حول كيف التطبيق "يرص" الصفحات فوق بعضها وكيف يحذفها.
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+كيف يشتغل الكود؟ (Technical Breakdown)
+الشاشة الرئيسية (Home):
+عملت شاشة فيها قائمة منتجات بسيطة. كل منتج فيه زر "التفاصيل". لما تضغط على الزر، استخدمت أمر Navigator.push. هذا الأمر وظيفته ياخذ الصفحة الجديدة (DetailScreen) ويحطها فوق صفحة الهوم.
+ليش استخدمت MaterialPageRoute؟ عشان فلاتر هو اللي يهتم بحركة الأنميشن (كيف تظهر الصفحة) ويوفر لي "سهم الرجوع" التلقائي.
+شاشة التفاصيل (Detail):
+هنا طبقت عكس العملية. أضفت زر "رجوع" يدوي (مثل ما هو مطلوب في التكليف) وبرمجته بأمر Navigator.pop. هذا الأمر ببساطة "يمسح" صفحة التفاصيل من أعلى المكدس، فترجع تظهر لنا الشاشة اللي كانت تحتها (اللي هي الهوم).
+حالة الـ Stack أثناء التشغيل:
+أول ما تفتح التطبيق: يكون الـ Stack فيه [ HomeScreen ] فقط.
+لما تضغط "التفاصيل": يصير الـ Stack كذا [ DetailScreen فوق HomeScreen ].
+لما تضغط "رجوع": يتم حذف الـ Detail ويرجع الـ Stack فيه [ HomeScreen ] وبس
