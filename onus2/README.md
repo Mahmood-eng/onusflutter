@@ -6,10 +6,17 @@
 إرجاع النتيجة (Backward Result): استخدمت ميزة الـ pop لإرسال نص مثل " تم إضافة المنتج الى المفضلات " عند العودة للشاشة السابقة.
 
 تنبيه المستخدم (SnackBar): برمجت الشاشة الرئيسية بحيث "تنتظر" الرد، وأول ما ترجع، يظهر شريط تنبيه (SnackBar) في أسفل الشاشة يوضح العملية اللي تمت.
-🧠 كيف يشتغل النظام؟ (المنطق البرمجي)
+ كيف يشتغل النظام؟ (المنطق البرمجي)
 في الشاشة الرئيسية: استخدمت await مع الـ Navigator.push. هذا يخلي التطبيق ينتظر لين يرجع المستخدم من الشاشة الثانية.
 
 في شاشة التفاصيل: عند الضغط على زر "إضافة للمفضلة"، نغلق الشاشة بـ Navigator.pop(context, 'Added to favorites').
 العودة: بمجرد العودة، يستلم التطبيق النص المرسل ويظهره فوراً في SnackBar.
 
 لقطات الشاشة :
+
+
+D:\mahmood\flutter\onusflutter\onus2\lib\screenshoot\image1.png
+
+D:\mahmood\flutter\onusflutter\onus2\lib\screenshoot\image2.png
+
+D:\mahmood\flutter\onusflutter\onus2\lib\screenshoot\image3.png
